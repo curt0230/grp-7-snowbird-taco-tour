@@ -1,0 +1,239 @@
+/* {
+    font-family: 'Garamond';
+}*/
+#grad {
+    background-image: linear-gradient(#ffb4a2, white);
+  }
+.panel-body {
+    color:#b5838d;
+    background-color: #faf9f9;
+    border: 1px solid #fcd5ce;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 3px 20px #fcd5ce;
+    padding: 5%;
+ 
+  }
+  
+  .panel-heading {
+    background-color: #fcd5ce;
+    border: 1px solid #fcd5ce;
+    color:#b5838d;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 5px 3px 20px #F4A261;
+    padding: 5%;
+    font-family: Amarante;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+  }
+
+.jumbo-bg {
+    font-size: 200pt;
+    text-align: center;
+    font-family: Frijole;
+    color: #fefae0;
+    background-size: cover;
+    
+}
+
+
+nav{
+  background-color: #fefae0;
+  overflow:visible;
+
+}
+@media screen and (max-width: 600px) {
+  ul.nav li.right, 
+  ul.nav li {float: none;}}
+
+.pill-nav a.active {
+  
+  color: #264653;
+  border-bottom: 5px solid #F4A261;
+}
+/* Style the links inside the pill navigation menu */
+.pill-nav a {
+    display: inline-block;
+    
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-family: Barrio;
+    font-size: 18px;
+    color: #264653;
+  }
+  /* border-radius: 5px;*/
+  /* Change the color of links on mouse-over*/
+  .pill-nav a:hover {
+    background-color: #264653;
+    color: #F4A261;
+  }
+  
+  /* Add a color to the active/current link */
+
+  .active {
+    color: #264653;
+    font-size: 24px;
+  }
+  .image {
+    padding-top: 55pt;
+  }
+ 
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+  }
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 300px;
+  color: #264653;
+  font-family: Barrio;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #F4A261;
+  min-width: 100px;
+  max-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px 10px;
+  z-index: 1;
+  color: #264653;
+  font-family: Barrio;
+  font-size: 12pt;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.pill-nav a:hover {
+  background-color: #264653;
+  color: #F4A261;
+}
+.h1{
+  color: #264653;
+  font-family: Frijole;
+  font-size: 48pt;
+  padding-top: 25px;
+}
+.p{
+  color: #E76F51;
+  font-family: Darker Grotesque;
+  font-weight: 600;
+  font-size: 18pt;
+}
+.p1{
+  color: #E76F51;
+  font-family: Barrio;
+  font-size: 18pt;
+}
+.title{
+  color: #264653;
+  font-family: Frijole;
+  font-size: 18pt;
+  text-align: left;
+  padding-right: 450px ;
+}
+.thead{
+  color: #E76F51;
+  font-family: Barrio;
+  font-size: 18pt;
+}
+.card{
+ 
+  color: #fefae0;
+  font-family: Barrio;
+}
+.btn{
+  background-color: #F4A261;
+  border-style: none;
+  color: #fefae0;
+}
+.btn:hover {
+  background-color: #E76F51;
+  color: #264653;
+  border-style: none;
+}
+.card{
+  background-color: #264653;
+  border: 0px solid #fefae0;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0px 0px 3px #F4A261;
+
+}
+
+
+/* The side navigation menu */
+.sidenav {
+ z-index: 10;
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  
+  top: 0; /* Stay at the top */
+  left: 42px;
+  background-color: #264653; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow: 0px 0px 10px #F4A261;
+}
+
+/* The navigation menu links */
+.sidenav a {
+ 
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #fefae0;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+ 
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+
+}
+
+.list-group-item{
+  width: min-content;
+  color: #E76F51;
+  font-family: Barrio;
+  font-size: 14pt;
+}

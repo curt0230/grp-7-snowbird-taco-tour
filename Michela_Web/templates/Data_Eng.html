@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taco Tour - Home</title>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- custom CSS-->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barrio">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Frijole">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Darker+Grotesque">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   
+</head>
+<body style="background-color: #fefae0; padding-bottom: 100px;">
+  <div class="container-fluid">
+<!--side nav-->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <p class="p1" style="padding-left: 5%;">Filter Search</p>
+  <form class="form">
+    
+    <ul>
+        <li class="list-group-item">
+          <label for="date" >Enter Date</label>
+          <input type="text" placeholder="1/10/2010" id="datetime" />
+        </li>
+        <li class="list-group-item">                          
+          <label for="city">Enter City</label>
+          <input type="text" placeholder="roswell" id="city" /></li>
+        <li class="list-group-item">
+          <label for="state">Enter state</label>
+          <input type="text" placeholder="nm" id="state" />
+        </li>
+        <li class="list-group-item">                          
+          <label for="country">Enter Country</label>
+          <input type="text" placeholder="us" id="country" /></li>
+        <li class="list-group-item">
+          <label for="shape">Enter Shape</label>
+          <input type="text" placeholder="light" id="shape" /></li>
+           <!--<button id="filter-btn" type="button" class="btn btn-default">
+             Filter Table
+           </button>-->
+        </li>
+      </ul>
+  </form>
+</div>
+</div>
+<!-- Use any element to open the sidenav -->
+<span style="width: 40px; 
+height: 100%;
+position: fixed;
+writing-mode: vertical-lr;
+text-orientation: sideways;
+background-color: #E76F51;
+color: #fefae0;
+font-family: Barrio;
+font-size: 24pt;
+padding-top: 10px;
+box-shadow: 0px 0px 10px #F4A261;
+z-index: 10;
+" onclick="openNav()">Filter Menu</span>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+
+
+    <nav class="navbar navbar-expand-lg navbar-centered fixed-top" style="z-index: 1;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+
+
+        </div>
+        
+        <ul class="nav pill-nav">
+          <li role="presentation"><a href="/index.html">Home</a></li>
+
+          <li role="presentation"><a href="/about_us.html">About us</a></li>
+          <li role="presentation">
+        <div class="dropdown" style="padding: right 50pt;">
+          <span>Project</span>
+          <div class="dropdown-content">
+            <a href="/temp.html">Written Analysis</a>
+            <a href="/Data_Eng.html" >DATABASE</a>
+            <a href="/viz1.html">Taco Tour (Tableau)</a>
+            <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Taco Ratings (Tableau)</a>
+            <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Machine Learning</a>
+            <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Works Cited</a>
+          </div>
+        </div>
+        </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    
+      
+ 
+      <div class="container">
+        <row>
+          <div class="div">
+            <div class="col-lg-12" data-aos="fade-up">
+              <div class="image">
+                <div class="jumbotron jumbo-bg" style="background-image: url('static/images/taco4.jpg');">
+                  <p class="display-4" style="font-size: 110pt; opacity: 1;">Project / Data Engineering</p>
+                </div>
+            </div>
+            </div>
+          </div>
+          
+        </row>
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3" data-aos="fade-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Model</h5>
+                        <img class="card  img-fluid" src="https://raw.githubusercontent.com/curt0230/grp-7-snowbird-taco-tour/main/marsha_work/data_model/RestaurantsDataModelImage.png" Card image cap>
+                        <br>
+                        <a href="https://raw.githubusercontent.com/curt0230/grp-7-snowbird-taco-tour/main/marsha_work/data_model/RestaurantsDataModelImage.png" target="_blank" class="btn">Fullsize image</a>
+                      </div>
+                    
+                  </div>
+              </div>
+              <div class="col-md-9" data-aos="fade-left">
+                <p class="p">
+                  Are we alone in the universe? For millennia, humans have turned to the sky to answer this question. Now, thanks to research generously funded by W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our sky-searching with data analysis.<br><br>"The release of this analysis is well-timed: It coincides with the celebration of World UFO Day, which is a moment for ufologists around the world to connect, relax, and sample a range of UFO-themed snacks," said Dr. Ursula F. Olivier, the world's preeminent expert on circular sightings. "Citizen-scientists can be especially helpful in both cataloguing sightings—which is hugely helpful for us in our search for aliens—and in helping us celebrate the work that has already been done, such as this data visualization project, which will help us raise awareness of the ubiquity of sightings!"<br><br>Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.<br><br>So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.
+    
+    
+                </p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <br>
+    <br>
+    <row>
+        <div class="div" data-aos="fade-down">
+          <h1 class="h1" style="text-align: center">Heading 2</h1>
+        </div>
+        </row>
+    <div class="container-fluid" style="padding: 5%;">
+        <div class="row">
+          <div class="col-md-12" data-aos="fade-up">
+            <table class=" table table-responsive table-striped table-hover">
+              <thead class="thead">
+                <tr>
+                    <th>Date</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>Shape</th>
+                    <th>Duration</th>
+                    <th>Comments</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+      <script src="static/js/data.js"></script>
+      <script src="static/js/SQL_app.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  
+    <script src="./static/js/app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 3000,
+        once: true,
+      });
+    </script>
+
+</body>
+
+</html>
