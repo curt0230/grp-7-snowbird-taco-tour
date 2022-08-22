@@ -1,36 +1,56 @@
-from flask import Flask, render_template, redirect, url_for
 
+from flask import Flask, render_template, redirect, request, jsonify
+#from modelHelper import ModelHelper
+from sqlHelper import SQLHelper
+import json
+
+# Create an instance of Flask
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-#Home page
-@app.route("/")
-def index():
+#modelHelper = ModelHelper()
+sqlHelper = SQLHelper()
 
+# Route to render index.html template using data from Mongo
+@app.route("/")
+def home():
+    # Return template and data
     return render_template("index.html")
-#about us
+
 @app.route("/about_us")
 def about_us():
     # Return template and data
     return render_template("about_us.html")
 
-#Written Analysis
-@app.route("/temp")
-def temp():
+@app.route("/sql_table")
+def sql_table():
     # Return template and data
-    return render_template("temp.html")
+    return render_template("sql_page.html")
 
-#database
-@app.route("/Data_Eng")
-def data_eng():
+@app.route("/sql_graphs")
+def sql_graphs():
     # Return template and data
-    return render_template("Data_Eng.html")
+    return render_template("sql_graphs.html")
 
 #Tableau dashbord 1
 @app.route("/viz1")
 def viz1():
     # Return template and data
     return render_template("viz1.html")
+
+
+
+
+@app.route("/getSQL", methods=["POST"])
+def get_sql():
+    content = request.json["data"]
+    print(content)
+    
+    # parse
+    city = content["city"]
+    state = content["state"]
+    df = sqlHelper.getDataFromDatabase(city, state)
+    return(jsonify(json.loads(df.to_json(orient="records"))))
 
 
 @app.after_request
@@ -45,6 +65,6 @@ def add_header(r):
     r.headers["Expires"] = "0"
     return r
 
-
+#main
 if __name__ == "__main__":
     app.run(debug=True)

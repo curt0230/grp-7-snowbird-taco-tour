@@ -150,6 +150,14 @@ nav{
   color: #E76F51;
   font-family: Barrio;
   font-size: 18pt;
+  background-color: #fefae0;
+}
+.tbody{
+  color: #E76F51;
+  font-family: Darker Grotesque;
+  font-weight: 600;
+  font-size: 14pt;
+  background-color: #fefae0;
 }
 .card{
  
@@ -160,11 +168,13 @@ nav{
   background-color: #F4A261;
   border-style: none;
   color: #fefae0;
+  font-family: Barrio;
 }
 .btn:hover {
   background-color: #E76F51;
   color: #264653;
   border-style: none;
+  font-family: Barrio;
 }
 .card{
   background-color: #264653;
@@ -231,9 +241,10 @@ nav{
 
 }
 
-.list-group-item{
-  width: min-content;
+.form-group{
+  
   color: #E76F51;
   font-family: Barrio;
   font-size: 14pt;
+  padding: 10px;
 }
