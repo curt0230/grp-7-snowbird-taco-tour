@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TITANIC ML</title>
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Titanic
+                <span class="sr-only">(current)</span>
+              </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <a href="/about_us">About Us</a>
+    <hr style="color:lightgray; border-width: 3px;">
+    <div class="container">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Filters</div>
+            <div class="card-body">
+              <div class="form-group">
+                <label class="col-form-label" for="BusinessAcceptsCreditCards">Accepts Credit Cards</label>
+                <select id="BusinessAcceptsCreditCards">
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="GoodForKids">Good for Kids</label>
+                <select id="GoodForKids">
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="WheelchairAccessible">Wheelchair Accessible</label>
+                <select id="WheelchairAccessible">
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="AlcoholId">Alcohol</label>
+                <select id="AlcoholId">
+                    <option value="3">None</option>
+                    <option value="2">Full Bar</option>
+                    <option value="4">Beer & Wine</option>
+                    <option value="1">N/A</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="BusinessParkingTypeId">Parking Options</label>
+                <select id="BusinessParkingTypeId">
+                    <option value="4">Lot</option>
+                    <option value="2">Street</option>
+                    <option value="1">Garage</option>
+                    <option value="5">Valet</option>
+                    <option value="3">Validated</option>
+                    <option value="1">N/A</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="RestaurantsTypeId">Restaurants Type</label>
+                <select id="RestaurantsTypeId">
+                    <option value='2'>Large Groups</option>
+                    <option value='4'>Take Out</option>
+                    <option value='5'>Dine In</option>
+                    <option value='6'>Delivery</option>
+                    <option value='3'>Reservations</option>
+                    <option value='0'>N/A</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="GoodForMealTypeId">Meal Type</label>
+                <select id="GoodForMealTypeId">
+                    <option value='4'>Dinner</option>
+                    <option value="3">Lunch</option>
+                    <option value="6">Brunch</option>
+                    <option value="5">Breakfast</option>
+                    <option value='1'>Dessert</option>
+                    <option value='2'>Late Night</option>
+                    <option value='0'>N/A</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label" for="latitude">latitude</label>
+                <select id="latitude">
+                    <option value="1.68498">1.68498</option>
+                </select>
+                <label class="col-form-label" for="longitude">longitude</label>
+                <select id="longitude">
+                    <option value="69.654968">69.654968</option>  
+                </select>
+            </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-primary" id="filter">Make Prediction!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="color:lightgray; border-width: 3px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="output"></h1>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

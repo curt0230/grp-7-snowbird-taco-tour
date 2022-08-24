@@ -1,7 +1,17 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("main").style.marginLeft = "300px";
+  }
+  
+  /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+
+
+
 
 $(document).ready(function() {
     console.log("Page Loaded");
@@ -15,16 +25,29 @@ $(document).ready(function() {
 
 // call Flask API endpoint
 function makePredictions() {
-    var city = $("#city").val();
-    var state = $("#state").val();
-
+    var BusinessAcceptsCreditCards = $("#BusinessAcceptsCreditCards").val();
+    var GoodForKids = $("#GoodForKids").val();
+    var WheelchairAccessible = $("#WheelchairAccessible").val();
+    var AlcoholId = $("#AlcoholId").val();
+    var BusinessParkingTypeId = $("#BusinessParkingTypeId").val();
+    var RestaurantsTypeId = $("#RestaurantsTypeId").val();
+    var GoodForMealTypeId = $("#GoodForMealTypeId").val();
+    var latitude = $("#latitude").val();
+    var longitude = $("#longitude").val();
 
     // check if inputs are valid
 
     // create the payload
     var payload = {
-        "city": city,
-        "state": state
+        "BusinessAcceptsCreditCards": BusinessAcceptsCreditCards,
+        "GoodForKids": GoodForKids,
+        "WheelchairAccessible": WheelchairAccessible,
+        "AlcoholId": AlcoholId,
+        "BusinessParkingTypeId": BusinessParkingTypeId,
+        "RestaurantsTypeId": RestaurantsTypeId,
+        "GoodForMealTypeId": GoodForMealTypeId,
+        "latitude": latitude,
+        "longitude": longitude
     }
 
     // Perform a POST request to the query URL
@@ -36,12 +59,8 @@ function makePredictions() {
         success: function(returnedData) {
             // print it
             console.log(returnedData);
-
-            if (returnedData["prediction"] === "1") {
-                $("#output").text("You Survived!");
-            } else {
-                $("#output").text("You did not survive, sorry. :(");
-            }
+            $("#output").text(`We're ${pct} sure your restaurant would get a ${result}-star rating on Yelp!`);
+            
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {

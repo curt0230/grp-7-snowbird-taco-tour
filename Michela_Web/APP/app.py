@@ -1,6 +1,6 @@
 
 from flask import Flask, render_template, redirect, request, jsonify
-#from modelHelper import ModelHelper
+from modelHelper import ModelHelper
 from sqlHelper import SQLHelper
 import json
 
@@ -8,7 +8,7 @@ import json
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-#modelHelper = ModelHelper()
+modelHelper = ModelHelper()
 sqlHelper = SQLHelper()
 
 # Route to render index.html template using data from Mongo
@@ -37,7 +37,29 @@ def sql_graphs():
 def viz1():
     # Return template and data
     return render_template("viz1.html")
+@app.route("/ml")
+def ml():
+    # Return template and data
+    return render_template("ml.html")
 
+@app.route("/makePredictions", methods=["POST"])
+def make_predictions():
+    content = request.json["data"]
+    print(content)
+    
+    # parse
+    BusinessAcceptsCreditCards = content(["BusinessAcceptsCreditCards"])
+    GoodForKids = int(content(["GoodForKids"]))
+    WheelchairAccessible = int(content(["WheelchairAccessible"]))
+    AlcoholId = int(content(["AlcoholId"]))
+    BusinessParkingTypeId = int(content(["BusinessParkingTypeId"]))
+    RestaurantsTypeId = int(content(["RestaurantsTypeId"]))
+    GoodForMealTypeId = int(content(["GoodForMealTypeId"]))
+    latitude = float(content(["latitude"]))
+    longitude = float(content(["longitude"]))
+
+    preds = modelHelper.makePredictions(BusinessAcceptsCreditCards, GoodForKids, WheelchairAccessible, AlcoholId,BusinessParkingTypeId, RestaurantsTypeId, GoodForMealTypeId, latitude, longitude)
+    return(jsonify({"ok": True, "prediction": str(preds)}))
 
 
 
