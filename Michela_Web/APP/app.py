@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, jsonify
 from modelHelper import ModelHelper
 from sqlHelper import SQLHelper
 import json
+import pandas as pd
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -46,21 +47,21 @@ def ml():
 def make_predictions():
     content = request.json["data"]
     print(content)
-    
     # parse
-    BusinessAcceptsCreditCards = content(["BusinessAcceptsCreditCards"])
-    GoodForKids = int(content(["GoodForKids"]))
-    WheelchairAccessible = int(content(["WheelchairAccessible"]))
-    AlcoholId = int(content(["AlcoholId"]))
-    BusinessParkingTypeId = int(content(["BusinessParkingTypeId"]))
-    RestaurantsTypeId = int(content(["RestaurantsTypeId"]))
-    GoodForMealTypeId = int(content(["GoodForMealTypeId"]))
-    latitude = float(content(["latitude"]))
-    longitude = float(content(["longitude"]))
+    BusinessAcceptsCreditCards = modelHelper.convert_bit(content["BusinessAcceptsCreditCards"])
+    GoodForKids = modelHelper.convert_bit(content["GoodForKids"])
+    WheelchairAccessible = modelHelper.convert_bit(content["WheelchairAccessible"])
+    BusinessParkingTypeId = int(content["BusinessParkingTypeId"])
+    RestaurantsTypeId = int(content["RestaurantsTypeId"])
+    GoodForMealTypeId = int(content["GoodForMealTypeId"])
+    AlcoholId = int(content["AlcoholId"])
+    latitude = float(content["latitude"])
+    longitude = float(content["longitude"])
 
     preds = modelHelper.makePredictions(BusinessAcceptsCreditCards, GoodForKids, WheelchairAccessible, AlcoholId,BusinessParkingTypeId, RestaurantsTypeId, GoodForMealTypeId, latitude, longitude)
-    return(jsonify({"ok": True, "prediction": str(preds)}))
-
+    df = pd.DataFrame.from_dict([preds])
+    return (jsonify(json.loads(df.to_json(orient="records"))))
+    
 
 
 @app.route("/getSQL", methods=["POST"])
@@ -72,7 +73,7 @@ def get_sql():
     city = content["city"]
     state = content["state"]
     df = sqlHelper.getDataFromDatabase(city, state)
-    return(jsonify(json.loads(df.to_json(orient="records"))))
+    return(jsonify(json.loads(df.to_json())))
 
 
 @app.after_request

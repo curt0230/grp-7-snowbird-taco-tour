@@ -59,8 +59,18 @@ function makePredictions() {
         success: function(returnedData) {
             // print it
             console.log(returnedData);
-            $("#output").text(`We're ${pct} sure your restaurant would get a ${result}-star rating on Yelp!`);
-            
+            console.log(Object.values(returnedData))
+        var test = Object.entries(returnedData[0]['result'])
+        var result = []
+
+
+        Object.entries(returnedData[0]).forEach(([key, value]) => {result.push(value)});
+        $("#output").text(`We're ${result[0]}% sure your restaurant would get a ${result[1]}-star rating on Yelp!`); 
+
+         
+
+        
+    
 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
