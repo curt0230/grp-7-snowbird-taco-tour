@@ -51,11 +51,11 @@
             <span>Project</span>
             <div class="dropdown-content">
               <a href="/temp">Written Analysis</a>
-              <a href="/Data_Eng" >Data Engineering</a>
+              <a href="/sql_table">Data Engineering</a>
               <a href="/viz1">Taco Tour (Tableau)</a>
-              <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Taco Ratings (Tableau)</a>
-              <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Machine Learning</a>
-              <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Works Cited</a>
+              <a href="/viz2">Taco Ratings (Tableau)</a>
+              <a href="/ml">Machine Learning</a>
+              <a href="/works_cited">Works Cited</a>
             </div>
           </div>
           </li>
@@ -136,10 +136,13 @@
             </div>
             
             <div>
-            <select id="select" name="categoryDropdown">
-                <option value="hide">--Select the category to compare--</option>
+                <div class="form-group">
+                <label class="form-label">Location</label>
 
-            </select>
+                <select id="select" name="categoryDropdown">
+                    <option value="hide">Select Location</option>
+                </select>
+                </div>
             </div>
 
                     </div>
@@ -174,7 +177,7 @@ z-index: 11;
           <div class="div">
             <div class="col-lg-12" data-aos="fade-up">
               <div class="image">
-                <div class="jumbotron jumbo-bg" style="background-image: url('static/images/taco4.jpg');">
+                <div class="jumbotron jumbo-bg" style="background-image: url('static/Images/taco4.jpg');">
                   <p class="display-4" style="font-size: 110pt; opacity: 1;">Project / Machine Learning</p>
                 </div>
             </div>
@@ -187,10 +190,10 @@ z-index: 11;
               <div class="col-md-3" data-aos="fade-right">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Data Model</h5>
-                        <img class="card  img-fluid" src="https://raw.githubusercontent.com/curt0230/grp-7-snowbird-taco-tour/main/marsha_work/data_model/RestaurantsDataModelImage.png" Card image cap>
+                        <h5 class="card-title">Taco Tour Word Cloud</h5>
+                        <img class="card  img-fluid" src="static/images/color_masked_wordcloud.png" Card image cap>
                         <br>
-                        <a href="https://raw.githubusercontent.com/curt0230/grp-7-snowbird-taco-tour/main/marsha_work/data_model/RestaurantsDataModelImage.png" target="_blank" class="btn">Fullsize image</a>
+                        <a href="static/images/color_masked_wordcloud.png" target="_blank" class="btn">Fullsize image</a>
                       </div>
                     
                   </div>
@@ -204,21 +207,32 @@ z-index: 11;
               </div>
             </div>
           </div>
-    </div>
-    <br>
-    <br>
-    <row>
-        <div class="div" data-aos="fade-down">
-          <h1 class="h1" id="output" style="text-align: center; padding: 100px;">Make a Predeiction!</h1>
-        </div>
-        </row>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="output"></h1>
+          <row>
+            <div class="div" data-aos="fade-down">
+              <h1 class="h1" style="text-align: center">Try Our Learning Model:</h1>
             </div>
-        </div>
+            </row>
+            <row>
+              <div class="col-md-12" data-aos="fade-left">
+                <p  style="color: #E9C46A;  font-family: Barrio;
+                font-weight: 600;
+                font-size: 22pt; text-align: center; align-items: center;  margin: 0 auto;">Use the dropdowns in the filter menu to select the attributes.<br> Our model will use them to predict the star rating on Yelp!</p>
+              </div>
+            </row>
+            <br>
+          <row>
+            <div class="div">
+              <div class="col-lg-12" data-aos="fade-up">
+                <h1 class="h1" id="output" style="text-align: center; padding: 100px; color: #E76F51; font-family: Frijole; font-size: 64pt;
+                 text-shadow: -3px 0 #264653, 0 -3px #264653, -3px 0 #264653, 0 -3px #264653;
+                 border-radius: 25px;">Make a Prediction!</h1>
+            </div>
+            </div>
+          </row>
+        
+    
+
+  
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

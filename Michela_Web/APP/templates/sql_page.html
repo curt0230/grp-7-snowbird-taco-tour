@@ -34,14 +34,53 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <p class="p1" style="padding-left: 5%;">Filter Search</p>
             <div class="row">
-                <div class="col-md-6">
+                
                     <div class="form-group">
                         <label class="p1" for="city">City</label>
                         <input type="text" class="form-control" value='"Tempe"' id="city">
                         <label class="p1" for="state">State</label>
                         <input type="text" class="form-control" value='"AZ"' id="state">
                     </div>
+                    <div class="form-group">
+                      <label class="form-label" for="DietaryRestrictionsType">Dietary Restrictions</label>
+                        <select id="DietaryRestrictionsType">
+                          <option value='"DietaryRestrictionsvegetarian"'>Vegetarian</option>
+                          <option value='"DietaryRestrictionsvegan"'>Vegan</option>
+                          <option value='"na"'>N/A</option>
+                        </select>
+
+                  <div class="form-group">
+                    <label class="form-label" for="GoodForMealType">Meal</label>
+                      <select id="GoodForMealType">
+                        <option value='"GoodForMealdinner"'>Dinner</option>
+                        <option value='"GoodForMeallunch"'>Lunch</option>
+                        <option value='"GoodForMealbrunch"'>Brunch</option>
+                        <option value='"GoodForMealbreakfast"'>Breakfast</option>
+                        <option value='"GoodForMealdessert"'>Dessert</option>
+                        <option value='"GoodForMeallatenight"'>Late Night</option>
+                        <option value='"na"'>N/A</option>
+                      </select>
                 </div>
+                <div class="form-group">
+                  <label class="form-label" for="is_mexican_restaurant">Mexican Restaurant</label>
+                  <select id="is_mexican_restaurant">
+                      <option value="True">True</option>
+                      <option value="False">False</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="RestaurantsType">Restaurant Type</label>
+                <select id="RestaurantsType">
+                  <option value='"RestaurantsGoodForGroups"'>Groups</option>
+                  <option value='"RestaurantsTakeOut"'>Take Out</option>
+                  <option value='"RestaurantsTableService"'>Table Service</option>
+                  <option value='"RestaurantsDelivery"'>Delivery</option>
+                  <option value='"RestaurantsReservations"'>Reservations</option>
+                  <option value='"na"'>N/A</option>
+                </select>
+            </div>
+                              
+                
             </div>
             <div class="row" style="padding: 10px;">
                 <div class="col-md-12">
@@ -91,9 +130,9 @@ z-index: 10;
               <a href="/temp">Written Analysis</a>
               <a href="/Data_Eng" >Data Engineering</a>
               <a href="/viz1">Taco Tour (Tableau)</a>
-              <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Taco Ratings (Tableau)</a>
-              <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Machine Learning</a>
-              <a href="https://michelaz.github.io/Bellybutton_Bacteria/Submission/bar.html">Works Cited</a>
+              <a href="/viz2">Taco Ratings (Tableau)</a>
+              <a href="/ml">Machine Learning</a>
+              <a href="/works_cited">Works Cited</a>
             </div>
           </div>
           </li>
@@ -121,9 +160,9 @@ z-index: 10;
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Data Model</h5>
-                        <img class="card  img-fluid" src="https://raw.githubusercontent.com/curt0230/grp-7-snowbird-taco-tour/main/marsha_work/data_model/RestaurantsDataModelImage.png" Card image cap>
+                        <img class="card  img-fluid" src="/static/Images/data_model.png" Card image cap>
                         <br>
-                        <a href="https://raw.githubusercontent.com/curt0230/grp-7-snowbird-taco-tour/main/marsha_work/data_model/RestaurantsDataModelImage.png" target="_blank" class="btn">Fullsize image</a>
+                        <a href="/static/Images/data_model.png" target="_blank" class="btn">Fullsize image</a>
                       </div>
                     
                   </div>
@@ -175,7 +214,7 @@ z-index: 10;
     </row>
     
 </div>
-<script src="/static/js/logic.js"></script>
+<!-- <script src="/static/js/logic.js"></script> -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

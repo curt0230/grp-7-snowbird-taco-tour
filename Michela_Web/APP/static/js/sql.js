@@ -10,28 +10,6 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 }
 
-function init() {
-  // Grab a reference to the dropdown select element
-  var selector = d3.select("#selDataset");
-
-  // Use the list of sample names to populate the select options
-  d3.json("static/data/samples.json").then((data) => {
-    var sampleNames = data.names;
-
-    sampleNames.forEach((sample) => {
-      selector
-        .append("option")
-        .text(sample)
-        .property("value", sample);
-    });
-
-    // Use the first sample from the list to build the initial plots
-    var firstSample = sampleNames[0];
-    buildCharts(firstSample);
-    buildMetadata(firstSample);
-  });
-}
-
 $(document).ready(function() {
   
   console.log("Page Loaded");
@@ -39,7 +17,7 @@ $(document).ready(function() {
   $("#filter").click(function() {
       // alert("button clicked!");
       getSQL();
-      renderTable();
+      // renderTable();
   });
 });
 
@@ -48,6 +26,10 @@ $(document).ready(function() {
 function getSQL() {
   var city = $("#city").val();
   var state = $("#state").val();
+  var DietaryRestrictionsType = $("#DietaryRestrictionsType").val();
+  var GoodForMealType = $("#GoodForMealType").val();
+  var is_mexican_restaurant = $("#is_mexican_restaurant").val();
+  var RestaurantsType = $("#RestaurantsType").val();
 
 
   // check if inputs are valid
@@ -55,28 +37,34 @@ function getSQL() {
   // create the payload
   var payload = {
       "city": city,
-      "state": state
+      "state": state,
+      "DietaryRestrictionsType": DietaryRestrictionsType,
+      "GoodForMealType": GoodForMealType,
+      "is_mexican_restaurant": is_mexican_restaurant,
+      "RestaurantsType": RestaurantsType
+
   }
 
   // Perform a POST request to the query URL
   $.ajax({
-      type: "POST",
-      url: "/getSQL",
-      contentType: 'application/json;charset=UTF-8',
-      data: JSON.stringify({ "data": payload }),
-      success: function(returnedData) {
-          // print it
-          console.log(returnedData);
-          renderTable(returnedData);
+    type: "POST",
+    url: "/getSQL",
+    contentType: 'application/json;charset=UTF-8',
+    data: JSON.stringify({ "data": payload }),
+    success: function(returnedData) {
+        // print it
+        console.log(returnedData);
+        renderTable(returnedData);
 
-      },
-      error: function(XMLHttpRequest, textStatus, errorThrown) {
-          alert("Status: " + textStatus);
-          alert("Error: " + errorThrown);
-      }
-  });
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+        alert("Status: " + textStatus);
+        alert("Error: " + errorThrown);
+    }
+});
 
 }
+
 
 function renderTable(inp_data) {
   // init html string

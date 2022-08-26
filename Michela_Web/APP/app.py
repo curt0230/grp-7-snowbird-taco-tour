@@ -23,6 +23,16 @@ def about_us():
     # Return template and data
     return render_template("about_us.html")
 
+@app.route("/works_cited")
+def wors_cited():
+    # Return template and data
+    return render_template("works_cited.html")
+
+@app.route("/temp")
+def temp():
+    # Return template and data
+    return render_template("temp.html")
+
 @app.route("/sql_table")
 def sql_table():
     # Return template and data
@@ -38,6 +48,12 @@ def sql_graphs():
 def viz1():
     # Return template and data
     return render_template("viz1.html")
+
+@app.route("/viz2")
+def viz2():
+    # Return template and data
+    return render_template("viz2.html")
+
 @app.route("/ml")
 def ml():
     # Return template and data
@@ -72,8 +88,14 @@ def get_sql():
     # parse
     city = content["city"]
     state = content["state"]
-    df = sqlHelper.getDataFromDatabase(city, state)
-    return(jsonify(json.loads(df.to_json())))
+    DietaryRestrictionsType = content["DietaryRestrictionsType"]
+    GoodForMealType = content["GoodForMealType"]
+    is_mexican_restaurant = content["is_mexican_restaurant"]
+    RestaurantsType = content["RestaurantsType"]
+
+
+    df = sqlHelper.getDataFromDatabase(city, state, DietaryRestrictionsType, GoodForMealType, is_mexican_restaurant,  RestaurantsType)
+    return(jsonify(json.loads(df.to_json(orient="records"))))
 
 
 @app.after_request

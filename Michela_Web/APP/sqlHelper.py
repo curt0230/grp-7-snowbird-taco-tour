@@ -13,7 +13,7 @@ class SQLHelper():
         # Create an engine that can talk to the database
         self.engine = create_engine(self.conn_string)
 
-    def getDataFromDatabase(self, city, state):
+    def getDataFromDatabase(self, city, state, DietaryRestrictionsType,GoodForMealType, is_mexican_restaurant, RestaurantsType):
 
         query = f"""
                         SELECT
@@ -30,8 +30,12 @@ class SQLHelper():
             RestaurantAttributes as ra
             ON r.business_id = ra.business_id        
         WHERE
-            city = ({city})
-            AND state = ({state});
+            r.city in ({city})
+            AND r.state in ({state})
+            AND ra.DietaryRestrictionsType = {DietaryRestrictionsType}
+            AND ra.GoodForMealType = {GoodForMealType}
+            And r.is_mexican_restaurant = {is_mexican_restaurant}
+            And ra.RestaurantsType = {RestaurantsType};
                     """
 
         print(query)
