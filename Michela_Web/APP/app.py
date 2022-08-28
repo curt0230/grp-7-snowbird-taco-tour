@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, redirect, request, jsonify
 from modelHelper import ModelHelper
 from sqlHelper import SQLHelper
@@ -79,6 +78,17 @@ def make_predictions():
     return (jsonify(json.loads(df.to_json(orient="records"))))
     
 
+@app.route("/getcities", methods=["GET"])
+def getcities():
+    df = sqlHelper.getcities()
+    cities = df.city.to_list()
+    return(jsonify({"ok": True, 'cities': cities}))
+
+@app.route("/getstates", methods=["GET"])
+def getstates():
+    df = sqlHelper.getstates()
+    states = df.state.to_list()
+    return(jsonify({"ok": True, 'states': states}))
 
 @app.route("/getSQL", methods=["POST"])
 def get_sql():
@@ -93,9 +103,10 @@ def get_sql():
     is_mexican_restaurant = content["is_mexican_restaurant"]
     RestaurantsType = content["RestaurantsType"]
 
-
+    #create df and jsonify
     df = sqlHelper.getDataFromDatabase(city, state, DietaryRestrictionsType, GoodForMealType, is_mexican_restaurant,  RestaurantsType)
     return(jsonify(json.loads(df.to_json(orient="records"))))
+
 
 
 @app.after_request
@@ -113,3 +124,4 @@ def add_header(r):
 #main
 if __name__ == "__main__":
     app.run(debug=True)
+

@@ -50,12 +50,10 @@
           <div class="dropdown" style="padding: right 50pt;">
             <span>Project</span>
             <div class="dropdown-content">
-              <a href="/temp">Written Analysis</a>
               <a href="/sql_table">Data Engineering</a>
-              <a href="/viz1">Taco Tour (Tableau)</a>
-              <a href="/viz2">Taco Ratings (Tableau)</a>
+              <a style="text-align: left;" href="/viz1">Snowbird Taco Tour (Tableau)</a>
+              <a style="text-align: left;" href="/viz2">Business Profile Completeness (Tableau)</a>
               <a href="/ml">Machine Learning</a>
-              <a href="/works_cited">Works Cited</a>
             </div>
           </div>
           </li>
@@ -66,34 +64,52 @@
     <!--side nav-->
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <p class="p1" style="padding-left: 5%;">Filters</p>
+    <p class="filteroptions">Filter Options</p>
             <div class="row">
-             <div style="align-items:center;">   
+             <div style="align-items:center;">
+              <div>
+                <div class="row" style="padding-left: 10px;">
+                  <div class="col-md-12">
+                      <button type="button" class="btn" id="filter">Make Prediction!</button>
+                  </div>
+              </div> 
+                <div class="form-group">
+                <label class="form-label">Location</label>
+
+                <select id="select" name="categoryDropdown" class="form-select" aria-label="Default select example">
+                    <option value="hide">Select Location</option>
+                </select>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+  
 
               <div class="form-group">
                 <label class="form-label" for="BusinessAcceptsCreditCards">Accepts Credit Cards</label>
-                <select id="BusinessAcceptsCreditCards">
+                <select id="BusinessAcceptsCreditCards" class="form-select" aria-label="Default select example">
                     <option value="True">True</option>
                     <option value="False">False</option>
                 </select>
             </div>
             <div class="form-group">
                 <label class="col-form-label" for="GoodForKids">Good for Kids</label>
-                <select id="GoodForKids">
+                <select id="GoodForKids" class="form-select" aria-label="Default select example">
                     <option value="1">True</option>
                     <option value="0">False</option>
                 </select>
             </div>
             <div class="form-group">
                 <label class="col-form-label" for="WheelchairAccessible">Wheelchair Accessible</label>
-                <select id="WheelchairAccessible">
+                <select id="WheelchairAccessible" class="form-select" aria-label="Default select example">
                     <option value="1">True</option>
                     <option value="0">False</option>
                 </select>
             </div>
             <div class="form-group">
                 <label class="col-form-label" for="AlcoholId">Alcohol</label>
-                <select id="AlcoholId">
+                <select id="AlcoholId" class="form-select" aria-label="Default select example">
                     <option value="3">None</option>
                     <option value="2">Full Bar</option>
                     <option value="4">Beer & Wine</option>
@@ -102,7 +118,7 @@
             </div>
             <div class="form-group">
                 <label class="col-form-label" for="BusinessParkingTypeId">Parking Options</label>
-                <select id="BusinessParkingTypeId">
+                <select id="BusinessParkingTypeId" class="form-select" aria-label="Default select example">
                     <option value="4">Lot</option>
                     <option value="2">Street</option>
                     <option value="1">Garage</option>
@@ -113,7 +129,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="RestaurantsTypeId">Restaurants Type</label>
-                <select id="RestaurantsTypeId">
+                <select id="RestaurantsTypeId" class="form-select" aria-label="Default select example">
                     <option value="2">Large Groups</option>
                     <option value="4">Take Out</option>
                     <option value="5">Dine In</option>
@@ -124,7 +140,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="GoodForMealTypeId">Meal Type</label>
-                <select id="GoodForMealTypeId">
+                <select id="GoodForMealTypeId" class="form-select" aria-label="Default select example">
                     <option value="4">Dinner</option>
                     <option value="3">Lunch</option>
                     <option value="6">Brunch</option>
@@ -135,23 +151,7 @@
                 </select>
             </div>
             
-            <div>
-                <div class="form-group">
-                <label class="form-label">Location</label>
-
-                <select id="select" name="categoryDropdown">
-                    <option value="hide">Select Location</option>
-                </select>
-                </div>
-            </div>
-
-                    </div>
-                </div>
-                <div class="row" style="padding-left: 10px;">
-                    <div class="col-md-12">
-                        <button type="button" class="btn" id="filter">Make Prediction!</button>
-                    </div>
-                </div>
+   
             </div>
         </div>
     </div>
