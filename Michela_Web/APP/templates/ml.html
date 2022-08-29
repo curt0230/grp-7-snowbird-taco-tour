@@ -51,9 +51,10 @@
             <span>Project</span>
             <div class="dropdown-content">
               <a href="/sql_table">Data Engineering</a>
+              <a href="/ml">Machine Learning</a>
               <a style="text-align: left;" href="/viz1">Snowbird Taco Tour (Tableau)</a>
               <a style="text-align: left;" href="/viz2">Business Profile Completeness (Tableau)</a>
-              <a href="/ml">Machine Learning</a>
+              <a href="/temp">Written Analysis</a>
             </div>
           </div>
           </li>
@@ -64,12 +65,13 @@
     <!--side nav-->
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <p class="filteroptions">Filter Options</p>
+    
             <div class="row">
              <div style="align-items:center;">
               <div>
                 <div class="row" style="padding-left: 10px;">
                   <div class="col-md-12">
+                    
                       <button type="button" class="btn" id="filter">Make Prediction!</button>
                   </div>
               </div> 
@@ -186,6 +188,7 @@ z-index: 11;
           
         </row>
         <div class="container-fluid">
+          <br>
             <div class="row">
               <div class="col-md-3" data-aos="fade-right">
                 <div class="card">
@@ -200,14 +203,60 @@ z-index: 11;
               </div>
               <div class="col-md-9" data-aos="fade-left">
                 <p class="p">
-                  Are we alone in the universe? For millennia, humans have turned to the sky to answer this question. Now, thanks to research generously funded by W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our sky-searching with data analysis.<br><br>"The release of this analysis is well-timed: It coincides with the celebration of World UFO Day, which is a moment for ufologists around the world to connect, relax, and sample a range of UFO-themed snacks," said Dr. Ursula F. Olivier, the world's preeminent expert on circular sightings. "Citizen-scientists can be especially helpful in both cataloguing sightings—which is hugely helpful for us in our search for aliens—and in helping us celebrate the work that has already been done, such as this data visualization project, which will help us raise awareness of the ubiquity of sightings!"<br><br>Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.<br><br>So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.
-    
-    
+                Our goal with our machine learning project was to use restaurant attributes to predict how a
+                restaurant would be rated by customers. After testing multiple models, we saw that all the models
+                were extremely overfit in the training phase, and XGBoost RandomForest were the worst in that
+                regard.  All models yielded accuracy scores around 40-50% in the testing set.  Also, in all models
+                we observed that 4-star ratings had the highest F1 scores around 60-65%, 1 and 5-star reviews
+                were the lowest with F1 scores between 0 and 3%.  
+                <br>
+                <br>
+                In the end we dropped all attributes except the 9 most complete attributes and re-trained the model,
+                 which yielded very similar results.  Finally, we selected the LightGBM model as our final
+                model as it seems least overfit and performed similarly to the others.
+                <br>
+
                 </p>
               </div>
             </div>
           </div>
           <row>
+            <div class="row">
+              
+              <div class="col-md-9" data-aos="fade-right">
+                <p class="p">
+                  <br>
+                  Our primary issue with regard to machine learning was data completeness. Most business attributes
+                  have values like Na, No, or None so our models have weak prediction power.  Secondarily we had
+                  technical issues related to bugs in recent versions of XGBoost. 
+                 <br>
+                 <br>
+                 Our most important lesson is that machine learning is a voracious beast when it comes to consuming
+                  data.  To train an effective model, data must be complete and at volume.  Since we didn’t have 
+                 complete enough data to thoroughly train, we decided that as long as all the functionality is there and 
+                 works we were going to have fun with it.  Check out our predictions for how a restaurant in some hot destinations
+                  might perform below!
+                 
+                <br>
+
+                </p>
+              </div>
+              <div class="col-md-3" data-aos="fade-left">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">LGBM Results</h5>
+                        <img class="card  img-fluid" src="static/images/lgbm.png" Card image cap>
+                        <br>
+                        <a href="static/images/lgbm.png" target="_blank" class="btn">Fullsize image</a>
+                      </div>
+                    
+                  </div>
+              </div>
+        
+          </div>
+          <row>  
+            <br>
+            <br>
             <div class="div" data-aos="fade-down">
               <h1 class="h1" style="text-align: center">Try Our Learning Model:</h1>
             </div>
