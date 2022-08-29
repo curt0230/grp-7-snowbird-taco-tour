@@ -110,6 +110,17 @@ nav{
   font-family: Barrio;
   font-size: 18pt;
 }
+.p3{
+  color: #E9C46A;
+  font-family: Barrio;
+  font-size: 36pt;
+}
+.p4{
+  color: #264653;
+  font-family: Darker Grotesque;
+  font-weight: 600;
+  font-size: 24pt;
+}
 .title{
   color: #264653;
   font-family: Frijole;
