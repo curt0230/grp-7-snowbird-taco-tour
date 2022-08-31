@@ -1,4 +1,5 @@
-# Group 7 Final Project:  Snowbird Taco Tour!
+# Group 7 Final Project:  Snowbird Taco Tour
+Come with us on a journey as we explore Phoenix's hot taco scene from both the eater's perspective and the restauranteur's!
 
 ## Important links:
 - Final project website: https://snowbirdtacotour.herokuapp.com/
