@@ -171,7 +171,7 @@ function makeGraph(inp_data) {
   };
   var data = [trace1];
   var layout = {
-    title: "Average Restraunt Ratings",
+    title: "Average Restaurant Ratings",
     autosize: false,
     width: 1000,
     height: 500,

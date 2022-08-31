@@ -176,29 +176,22 @@ z-index: 10;
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Data Model</h5>
-                        <img class="card  img-fluid" src="/static/Images/data_model.png" Card image cap>
+                        <img class="card  img-fluid" src="/static/images/data_model.png" Card image cap>
                         <br>
-                        <a href="/static/Images/data_model.png" target="_blank" class="btn">Fullsize image</a>
+                        <a href="/static/images/data_model.png" target="_blank" class="btn">Fullsize image</a>
                       </div>
                     
                   </div>
               </div>
               <div class="col-md-9" data-aos="fade-left">
                 <p class="p" >
-                  When we created our data model we considered both BI and ML use cases when 
-                  developing our data model.  Our database contains two main tables:  Restaurants and 
-                  RestaurantAttributes.  It also includes 11 categorical tables that contain derived distinct 
-                  values from categorical columns or from ranges of boolean columns containing similar 
-                  attributes.
+                  When we created our data model we considered both BI and ML use cases when developing our data model. Our database contains two main tables: Restaurants and RestaurantAttributes. It also includes 11 categorical tables derived using distinct values from categorical columns or from ranges of boolean columns containing similar attributes.
                   <br>
                   <br>
-                  For our ETL process, we developed a number of helper functions for reusable pieces of 
-                  code.  These functions performed tasks like handling nulls, applying geocoding corrections, 
-                  and dynamically altering the data model and creating tables for various categories of data.
+                  For our ETL process, we developed a number of helper functions for reusable pieces of code. These functions performed tasks like handling nulls, applying geocoding corrections, and dynamically creating lookup tables for various categories of data.
                   <br>
                   <br>
-                  Once cleaning and transformation is complete, data is loaded into a SQLite database, which 
-                  is accessed for both machine learning and right here on the website!
+                  Once cleaning and transformation is complete the data is loaded into a SQLite database, which is accessed for both machine learning and right here on the website!
                   <br>
                   <br>
                 </p>
@@ -258,8 +251,8 @@ z-index: 10;
                     <tr>
                         <th>Name</th>
                         <th>Address</th>
-                        <th>State</th>
                         <th>City</th>
+                        <th>State</th>
                         <th>Zip Code</th>
                         <th>Review Count</th>
                         <th>Avg. Stars</th>

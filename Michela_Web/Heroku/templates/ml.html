@@ -179,7 +179,7 @@ z-index: 11;
           <div class="div">
             <div class="col-lg-12" data-aos="fade-up">
               <div class="image">
-                <div class="jumbotron jumbo-bg" style="background-image: url('static/Images/taco4.jpg');">
+                <div class="jumbotron jumbo-bg" style="background-image: url('static/images/taco4.jpg');">
                   <p class="display-4" style="font-size: 110pt; opacity: 1;">Project / Machine Learning</p>
                 </div>
             </div>
@@ -203,17 +203,10 @@ z-index: 11;
               </div>
               <div class="col-md-9" data-aos="fade-left">
                 <p class="p">
-                Our goal with our machine learning project was to use restaurant attributes to predict how a
-                restaurant would be rated by customers. After testing multiple models, we saw that all the models
-                were extremely overfit in the training phase, and XGBoost RandomForest were the worst in that
-                regard.  All models yielded accuracy scores around 40-50% in the testing set.  Also, in all models
-                we observed that 4-star ratings had the highest F1 scores around 60-65%, 1 and 5-star reviews
-                were the lowest with F1 scores between 0 and 3%.  
+                  Our goal with our machine learning project was to use restaurant attributes to predict how a restaurant would be rated by customers. After testing multiple models, we saw that all the models were extremely overfit in the training phase, and XGBoost and RandomForest were the worst in that regard. All models yielded accuracy scores around 40-50% in the testing set. Also, in all models we observed that 4-star ratings had the highest F1 scores around 60-65%, 1 and 5-star reviews were the lowest with F1 scores between 0 and 3%. 
                 <br>
                 <br>
-                In the end we dropped all attributes except the 9 most complete attributes and re-trained the model,
-                 which yielded very similar results.  Finally, we selected the LightGBM model as our final
-                model as it seems least overfit and performed similarly to the others.
+                In the end we dropped all attributes except the 9 most complete attributes and re-trained the model, which yielded very similar results. Finally, we selected the LightGBM model as our final model as it seems least overfit and performed similarly to the others.
                 <br>
 
                 </p>
@@ -226,16 +219,10 @@ z-index: 11;
               <div class="col-md-9" data-aos="fade-right">
                 <p class="p">
                   <br>
-                  Our primary issue with regard to machine learning was data completeness. Most business attributes
-                  have values like Na, No, or None so our models have weak prediction power.  Secondarily we had
-                  technical issues related to bugs in recent versions of XGBoost. 
+                  Our primary issue with regard to machine learning was extreme imbalance due to data completeness. Most business attributes have values like Na, No, or None so our models have weak prediction power. Secondarily we had technical issues related to bugs in recent versions of XGBoost.
                  <br>
                  <br>
-                 Our most important lesson is that machine learning is a voracious beast when it comes to consuming
-                  data.  To train an effective model, data must be complete and at volume.  Since we didn’t have 
-                 complete enough data to thoroughly train, we decided that as long as all the functionality is there and 
-                 works we were going to have fun with it.  Check out our predictions for how a restaurant in some hot destinations
-                  might perform below!
+                 Our most important lesson is that machine learning is a voracious beast when it comes to consuming data. To train an effective model, data must be complete and at volume.  Check out our predictions for how a restaurant in some hot destinations might perform below!
                  
                 <br>
 
@@ -245,9 +232,9 @@ z-index: 11;
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">LGBM Results</h5>
-                        <img class="card  img-fluid" src="static/images/lgbm.png" Card image cap>
+                        <img class="card  img-fluid" src="static/images/LGBM.png" Card image cap>
                         <br>
-                        <a href="static/images/lgbm.png" target="_blank" class="btn">Fullsize image</a>
+                        <a href="static/images/LGBM.png" target="_blank" class="btn">Fullsize image</a>
                       </div>
                     
                   </div>
