@@ -1,31 +1,3 @@
-/* {
-    font-family: 'Garamond';
-}*/
-#grad {
-    background-image: linear-gradient(#ffb4a2, white);
-  }
-.panel-body {
-    color:#b5838d;
-    background-color: #faf9f9;
-    border: 1px solid #fcd5ce;
-    border-radius: 0px 0px 10px 10px;
-    box-shadow: 5px 3px 20px #fcd5ce;
-    padding: 5%;
- 
-  }
-  
-  .panel-heading {
-    background-color: #fcd5ce;
-    border: 1px solid #fcd5ce;
-    color:#b5838d;
-    border-radius: 10px 10px 0px 0px;
-    box-shadow: 5px 3px 20px #F4A261;
-    padding: 5%;
-    font-family: Amarante;
-    font-weight: bold;
-    font-size: large;
-    text-align: center;
-  }
 
 .jumbo-bg {
     font-size: 200pt;
@@ -62,7 +34,7 @@ nav{
     font-size: 18px;
     color: #264653;
   }
-  /* border-radius: 5px;*/
+ 
   /* Change the color of links on mouse-over*/
   .pill-nav a:hover {
     background-color: #264653;
@@ -70,7 +42,6 @@ nav{
   }
   
   /* Add a color to the active/current link */
-
   .active {
     color: #264653;
     font-size: 24px;
@@ -139,6 +110,17 @@ nav{
   font-family: Barrio;
   font-size: 18pt;
 }
+.p3{
+  color: #E9C46A;
+  font-family: Barrio;
+  font-size: 36pt;
+}
+.p4{
+  color: #264653;
+  font-family: Darker Grotesque;
+  font-weight: 600;
+  font-size: 24pt;
+}
 .title{
   color: #264653;
   font-family: Frijole;
@@ -150,6 +132,14 @@ nav{
   color: #E76F51;
   font-family: Barrio;
   font-size: 18pt;
+  background-color: #fefae0;
+}
+.tbody{
+  color: #E76F51;
+  font-family: Darker Grotesque;
+  font-weight: 600;
+  font-size: 14pt;
+  background-color: #fefae0;
 }
 .card{
  
@@ -160,11 +150,19 @@ nav{
   background-color: #F4A261;
   border-style: none;
   color: #fefae0;
+  font-family: Barrio;
 }
 .btn:hover {
   background-color: #E76F51;
   color: #264653;
   border-style: none;
+  font-family: Barrio;
+}
+.btn:active {
+  background-color: #F4A261;
+  border-style: none;
+  color: #fefae0;
+  font-family: Barrio;
 }
 .card{
   background-color: #264653;
@@ -231,9 +229,26 @@ nav{
 
 }
 
-.list-group-item{
-  width: min-content;
+.form-group{
   color: #E76F51;
   font-family: Barrio;
   font-size: 14pt;
+  padding: 10px;
+  border-radius: 15px;
 }
+
+
+.filteroptions{
+  color: #F4A261;  
+  font-family: Barrio; 
+  font-weight: 600;
+  font-size: 22pt; 
+  text-align: left; 
+  align-items: center;  
+  margin: 0 auto;
+  padding-left: 5%;
+}
+
+
+
+

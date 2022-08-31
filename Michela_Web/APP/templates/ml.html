@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taco Tour - Machine Learning</title>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- custom CSS-->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barrio">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Frijole">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Darker+Grotesque">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+</head>
+
+<body style="background-color: #fefae0; padding-bottom: 100px;">
+    <div class="container-fluid">
+
+<!--Top Nav-->
+    <nav class="navbar navbar-expand-lg navbar-centered fixed-top" style="z-index: 1;">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+  
+          </div>
+          
+          <ul class="nav pill-nav">
+            <li role="presentation"><a href="/">Home</a></li>
+  
+            <li role="presentation"><a href="/about_us">About us</a></li>
+            <li role="presentation">
+          <div class="dropdown" style="padding: right 50pt;">
+            <span>Project</span>
+            <div class="dropdown-content">
+              <a href="/sql_table">Data Engineering</a>
+              <a href="/ml">Machine Learning</a>
+              <a style="text-align: left;" href="/viz1">Snowbird Taco Tour (Tableau)</a>
+              <a style="text-align: left;" href="/viz2">Business Profile Completeness (Tableau)</a>
+              <a href="/temp">Written Analysis</a>
+            </div>
+          </div>
+          </li>
+          </ul>
+        </div>
+      </nav>
+
+    <!--side nav-->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+            <div class="row">
+             <div style="align-items:center;">
+              <div>
+                <div class="row" style="padding-left: 10px;">
+                  <div class="col-md-12">
+                    
+                      <button type="button" class="btn" id="filter">Make Prediction!</button>
+                  </div>
+              </div> 
+                <div class="form-group">
+                <label class="form-label">Location</label>
+
+                <select id="select" name="categoryDropdown" class="form-select" aria-label="Default select example">
+                    <option value="hide">Select Location</option>
+                </select>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+  
+
+              <div class="form-group">
+                <label class="form-label" for="BusinessAcceptsCreditCards">Accepts Credit Cards</label>
+                <select id="BusinessAcceptsCreditCards" class="form-select" aria-label="Default select example">
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="GoodForKids">Good for Kids</label>
+                <select id="GoodForKids" class="form-select" aria-label="Default select example">
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="WheelchairAccessible">Wheelchair Accessible</label>
+                <select id="WheelchairAccessible" class="form-select" aria-label="Default select example">
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="AlcoholId">Alcohol</label>
+                <select id="AlcoholId" class="form-select" aria-label="Default select example">
+                    <option value="3">None</option>
+                    <option value="2">Full Bar</option>
+                    <option value="4">Beer & Wine</option>
+                    <option value="1">N/A</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label" for="BusinessParkingTypeId">Parking Options</label>
+                <select id="BusinessParkingTypeId" class="form-select" aria-label="Default select example">
+                    <option value="4">Lot</option>
+                    <option value="2">Street</option>
+                    <option value="1">Garage</option>
+                    <option value="5">Valet</option>
+                    <option value="3">Validated</option>
+                    <option value="1">N/A</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="RestaurantsTypeId">Restaurants Type</label>
+                <select id="RestaurantsTypeId" class="form-select" aria-label="Default select example">
+                    <option value="2">Large Groups</option>
+                    <option value="4">Take Out</option>
+                    <option value="5">Dine In</option>
+                    <option value="6">Delivery</option>
+                    <option value="3">Reservations</option>
+                    <option value="0">N/A</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="GoodForMealTypeId">Meal Type</label>
+                <select id="GoodForMealTypeId" class="form-select" aria-label="Default select example">
+                    <option value="4">Dinner</option>
+                    <option value="3">Lunch</option>
+                    <option value="6">Brunch</option>
+                    <option value="5">Breakfast</option>
+                    <option value="1">Dessert</option>
+                    <option value="2">Late Night</option>
+                    <option value="0">N/A</option>
+                </select>
+            </div>
+            
+   
+            </div>
+        </div>
+    </div>
+    <!-- Use any element to open the sidenav -->
+<span style="width: 40px; 
+height: 100%;
+position: fixed;
+writing-mode: vertical-lr;
+text-orientation: sideways;
+background-color: #E76F51;
+color: #fefae0;
+font-family: Barrio;
+font-size: 24pt;
+padding-top: 10px;
+box-shadow: 0px 0px 10px #F4A261;
+z-index: 11;
+" onclick="openNav()">Filter Menu</span>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+    <div class="container">
+        <row>
+          <div class="div">
+            <div class="col-lg-12" data-aos="fade-up">
+              <div class="image">
+                <div class="jumbotron jumbo-bg" style="background-image: url('static/Images/taco4.jpg');">
+                  <p class="display-4" style="font-size: 110pt; opacity: 1;">Project / Machine Learning</p>
+                </div>
+            </div>
+            </div>
+          </div>
+          
+        </row>
+        <div class="container-fluid">
+          <br>
+            <div class="row">
+              <div class="col-md-3" data-aos="fade-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Taco Tour Word Cloud</h5>
+                        <img class="card  img-fluid" src="static/images/color_masked_wordcloud.png" Card image cap>
+                        <br>
+                        <a href="static/images/color_masked_wordcloud.png" target="_blank" class="btn">Fullsize image</a>
+                      </div>
+                    
+                  </div>
+              </div>
+              <div class="col-md-9" data-aos="fade-left">
+                <p class="p">
+                Our goal with our machine learning project was to use restaurant attributes to predict how a
+                restaurant would be rated by customers. After testing multiple models, we saw that all the models
+                were extremely overfit in the training phase, and XGBoost RandomForest were the worst in that
+                regard.  All models yielded accuracy scores around 40-50% in the testing set.  Also, in all models
+                we observed that 4-star ratings had the highest F1 scores around 60-65%, 1 and 5-star reviews
+                were the lowest with F1 scores between 0 and 3%.  
+                <br>
+                <br>
+                In the end we dropped all attributes except the 9 most complete attributes and re-trained the model,
+                 which yielded very similar results.  Finally, we selected the LightGBM model as our final
+                model as it seems least overfit and performed similarly to the others.
+                <br>
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <row>
+            <div class="row">
+              
+              <div class="col-md-9" data-aos="fade-right">
+                <p class="p">
+                  <br>
+                  Our primary issue with regard to machine learning was data completeness. Most business attributes
+                  have values like Na, No, or None so our models have weak prediction power.  Secondarily we had
+                  technical issues related to bugs in recent versions of XGBoost. 
+                 <br>
+                 <br>
+                 Our most important lesson is that machine learning is a voracious beast when it comes to consuming
+                  data.  To train an effective model, data must be complete and at volume.  Since we didn’t have 
+                 complete enough data to thoroughly train, we decided that as long as all the functionality is there and 
+                 works we were going to have fun with it.  Check out our predictions for how a restaurant in some hot destinations
+                  might perform below!
+                 
+                <br>
+
+                </p>
+              </div>
+              <div class="col-md-3" data-aos="fade-left">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">LGBM Results</h5>
+                        <img class="card  img-fluid" src="static/images/lgbm.png" Card image cap>
+                        <br>
+                        <a href="static/images/lgbm.png" target="_blank" class="btn">Fullsize image</a>
+                      </div>
+                    
+                  </div>
+              </div>
+        
+          </div>
+          <row>  
+            <br>
+            <br>
+            <div class="div" data-aos="fade-down">
+              <h1 class="h1" style="text-align: center">Try Our Learning Model:</h1>
+            </div>
+            </row>
+            <row>
+              <div class="col-md-12" data-aos="fade-left">
+                <p  style="color: #E9C46A;  font-family: Barrio;
+                font-weight: 600;
+                font-size: 22pt; text-align: center; align-items: center;  margin: 0 auto;">Use the dropdowns in the filter menu to select the attributes.<br> Our model will use them to predict the star rating on Yelp!</p>
+              </div>
+            </row>
+            <br>
+          <row>
+            <div class="div">
+              <div class="col-lg-12" data-aos="fade-up">
+                <h1 class="h1" id="output" style="text-align: center; padding: 100px; color: #E76F51; font-family: Frijole; font-size: 64pt;
+                 text-shadow: -3px 0 #264653, 0 -3px #264653, -3px 0 #264653, 0 -3px #264653;
+                 border-radius: 25px;">Make a Prediction!</h1>
+            </div>
+            </div>
+          </row>
+        
+    
+
+  
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 3000,
+        once: true,
+      });
+    </script>
+    
+</body>
+
+</html>
